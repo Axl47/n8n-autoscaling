@@ -1,7 +1,6 @@
 FROM node:20
-#need platform flag before n20 if building on arm
 
-# Install dependencies for Puppeteer
+# Install dependencies for Puppeteer and Whisper
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libatk1.0-0 \
     libatk-bridge2.0-0 \
@@ -24,7 +23,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     xdg-utils \
     lsb-release \
-    fonts-noto-color-emoji && rm -rf /var/lib/apt/lists/*
+    fonts-noto-color-emoji \
+    ffmpeg \
+    python3 \
+    python3-pip \
+    git && rm -rf /var/lib/apt/lists/*
 
 # Install Chromium browser
 RUN apt-get update && apt-get install -y chromium && \
@@ -32,10 +35,16 @@ RUN apt-get update && apt-get install -y chromium && \
 
 # Install n8n and Puppeteer
 RUN npm install -g n8n puppeteer
+
+# Install yt-dlp (latest)
+RUN pip3 install yt-dlp
+
+# Install Faster-Whisper (with CTranslate2 and audio deps)
+RUN pip3 install faster-whisper ffmpeg-python
+
 # Add npm global bin to PATH to ensure n8n executable is found
 ENV PATH="/usr/local/lib/node_modules/n8n/bin:$PATH"
 
-# Set environment variables
 ENV N8N_LOG_LEVEL=info
 ENV NODE_FUNCTION_ALLOW_EXTERNAL=ajv,ajv-formats,puppeteer
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
