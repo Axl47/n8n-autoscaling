@@ -40,7 +40,7 @@ RUN npm install -g n8n puppeteer
 RUN pip3 install yt-dlp --break-system-packages
 
 # Install Faster-Whisper (with CTranslate2 and audio deps)
-RUN pip3 install faster-whisper ffmpeg-python
+RUN pip3 install faster-whisper ffmpeg-python --break-system-packages
 
 # Add npm global bin to PATH to ensure n8n executable is found
 ENV PATH="/usr/local/lib/node_modules/n8n/bin:$PATH"
