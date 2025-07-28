@@ -102,8 +102,8 @@ services:
       - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}  # You need to create your own encryption key
       - N8N_PORT=443
       - N8N_PROTOCOL=${N8N_PROTOCOL}
-      - WEBHOOK_N8N_HOST=${N8N_HOST}
-      - WEBHOOK_URL=${WEBHOOK_URL}
+      - N8N_WEBHOOK_HOST=${N8N_HOST}
+      - N8N_WEBHOOK_URL=${WEBHOOK_URL}
       # Queue mode config
       - EXECUTIONS_MODE=${EXECUTIONS_MODE}
       - QUEUE_BULL_REDIS_HOST=${QUEUE_BULL_REDIS_HOST}
