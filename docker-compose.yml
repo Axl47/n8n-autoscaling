@@ -77,7 +77,7 @@ services:
     volumes:
       - n8n_main:/n8n
       - /home/axor/.netrc:/root/.netrc:ro
-      - /home/axor/.private/cookies.txt:/root/cookies.txt:ro
+      - /home/axor/.private:/root/.private:ro
     depends_on:
       postgres:
         condition: service_healthy
@@ -129,7 +129,7 @@ services:
     volumes:
       - n8n_webhook:/n8n
       - /home/axor/.netrc:/root/.netrc:ro
-      - /home/axor/.private/cookies.txt:/root/cookies.txt:ro
+      - /home/axor/.private:/root/.private:ro
     depends_on:
       n8n:
         condition: service_healthy
@@ -176,7 +176,7 @@ services:
       - N8N_COMMAND_RESPONSE_URL=${N8N_COMMAND_RESPONSE_URL}
     volumes:
       - /home/axor/.netrc:/root/.netrc:ro
-      - /home/axor/.private/cookies.txt:/root/cookies.txt:ro
+      - /home/axor/.private:/root/.private:ro
     depends_on:
       n8n:
         condition: service_healthy
@@ -245,7 +245,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./.env:/app/.env
       - /home/axor/.netrc:/root/.netrc:ro
-      - /home/axor/.private/cookies.txt:/root/cookies.txt:ro
+      - /home/axor/.private:/root/.private:ro
     depends_on:
       redis:
         condition: service_healthy
