@@ -70,10 +70,6 @@ services:
       - PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.n8n.rule=Host(`${N8N_DOMAIN}`)"
-      - "traefik.http.routers.n8n.entrypoints=websecure"
-      - "traefik.http.routers.n8n.tls.certresolver=letsencrypt"
-      - "traefik.http.services.n8n.loadbalancer.server.port=${N8N_PORT}"
     volumes:
       - n8n_main:/n8n
       - /home/axor/.netrc:/root/.netrc:ro
@@ -122,10 +118,6 @@ services:
       - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.n8n_webhook.rule=Host(`${N8N_WEBHOOK_DOMAIN}`)"
-      - "traefik.http.routers.n8n_webhook.entrypoints=websecure"
-      - "traefik.http.routers.n8n_webhook.tls.certresolver=letsencrypt"
-      - "traefik.http.services.n8n_webhook.loadbalancer.server.port=${N8N_PORT}"
     volumes:
       - n8n_webhook:/n8n
       - /home/axor/.netrc:/root/.netrc:ro
