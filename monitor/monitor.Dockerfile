@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir redis
 
 # Define environment variables that can be overridden at runtime
 # These defaults should work with the existing docker-compose.yml
-ENV REDIS_HOST=n8n.axorai.net/redismonitor
+ENV REDIS_HOST=n8n.axorai.net
 ENV REDIS_PORT=6379
 ENV QUEUE_NAME_PREFIX=bull
 ENV QUEUE_NAME=jobs
