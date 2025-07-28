@@ -39,6 +39,9 @@ RUN npm install -g n8n puppeteer
 # Install yt-dlp (latest)
 RUN pip3 install yt-dlp --break-system-packages
 
+# Install yt-dlp (latest)
+RUN pip3 install requests --break-system-packages
+
 # Install Faster-Whisper (with CTranslate2 and audio deps)
 RUN pip3 install faster-whisper ffmpeg-python --break-system-packages
 
