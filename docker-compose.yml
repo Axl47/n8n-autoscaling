@@ -153,10 +153,6 @@ services:
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false
       - NODE_FUNCTION_ALLOW_EXTERNAL=ajv,ajv-formats,puppeteer
       - PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
-      - N8N_PROTOCOL=${N8N_PROTOCOL}
-      - N8N_HOST=${N8N_HOST}
-      - N8N_PORT=${N8N_PORT}
-      - WEBHOOK_URL=${WEBHOOK_URL}
       # Queue mode config
       - EXECUTIONS_MODE=${EXECUTIONS_MODE}
       - QUEUE_BULL_REDIS_HOST=${QUEUE_BULL_REDIS_HOST}
