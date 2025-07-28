@@ -50,6 +50,10 @@ services:
       - N8N_SECURE_COOKIE=${N8N_SECURE_COOKIE}
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=${N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS}
       - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}  # You need to create your own encryption key
+      - N8N_PROTOCOL=${N8N_PROTOCOL}
+      - N8N_HOST=${N8N_HOST}
+      - N8N_PORT=${N8N_PORT}
+      - WEBHOOK_URL=${WEBHOOK_URL}
       # Queue mode config
       - EXECUTIONS_MODE=${EXECUTIONS_MODE}
       - QUEUE_BULL_REDIS_HOST=${QUEUE_BULL_REDIS_HOST}
@@ -101,6 +105,10 @@ services:
       - N8N_USER_FOLDER=${N8N_USER_FOLDER}
       - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}  # You need to create your own encryption key
       - N8N_PORT=${N8N_PORT}
+      - N8N_PROTOCOL=${N8N_PROTOCOL}
+      - N8N_HOST=${N8N_HOST}
+      - N8N_PORT=${N8N_PORT}
+      - WEBHOOK_URL=${WEBHOOK_URL}
       # Queue mode config
       - EXECUTIONS_MODE=${EXECUTIONS_MODE}
       - QUEUE_BULL_REDIS_HOST=${QUEUE_BULL_REDIS_HOST}
@@ -149,6 +157,10 @@ services:
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false
       - NODE_FUNCTION_ALLOW_EXTERNAL=ajv,ajv-formats,puppeteer
       - PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+      - N8N_PROTOCOL=${N8N_PROTOCOL}
+      - N8N_HOST=${N8N_HOST}
+      - N8N_PORT=${N8N_PORT}
+      - WEBHOOK_URL=${WEBHOOK_URL}
       # Queue mode config
       - EXECUTIONS_MODE=${EXECUTIONS_MODE}
       - QUEUE_BULL_REDIS_HOST=${QUEUE_BULL_REDIS_HOST}
