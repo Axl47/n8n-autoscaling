@@ -41,7 +41,7 @@ services:
     user: root:root
     restart: unless-stopped
     ports:
-      - "443"
+      - "5678:5678"
       - "5679:5679"  
     environment:
       - N8N_DIAGNOSTICS_ENABLED=${N8N_DIAGNOSTICS_ENABLED}
