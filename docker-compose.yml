@@ -76,6 +76,7 @@ services:
       - "traefik.http.services.n8n.loadbalancer.server.port=${N8N_PORT}"
     volumes:
       - n8n_main:/n8n
+      - /home/axor/.netrc:/root/.netrc:ro
     depends_on:
       postgres:
         condition: service_healthy
@@ -126,6 +127,7 @@ services:
       - "traefik.http.services.n8n_webhook.loadbalancer.server.port=${N8N_PORT}"
     volumes:
       - n8n_webhook:/n8n
+      - /home/axor/.netrc:/root/.netrc:ro
     depends_on:
       n8n:
         condition: service_healthy
@@ -170,6 +172,8 @@ services:
       - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
       - N8N_TASK_BROKER_URL=${N8N_TASK_BROKER_URL}
       - N8N_COMMAND_RESPONSE_URL=${N8N_COMMAND_RESPONSE_URL}
+    volumes:
+      - /home/axor/.netrc:/root/.netrc:ro
     depends_on:
       n8n:
         condition: service_healthy
@@ -237,6 +241,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./.env:/app/.env
+      - /home/axor/.netrc:/root/.netrc:ro
     depends_on:
       redis:
         condition: service_healthy
