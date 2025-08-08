@@ -35,11 +35,12 @@ RUN apt-get update && apt-get install -y chromium && \
 
 # Install n8n and Puppeteer
 RUN npm install -g n8n puppeteer
-RUN npm install -g n8n-nodes-puppeteer
 ENV N8N_CUSTOM_EXTENSIONS="/data/community-nodes"
 
 # Install yt-dlp (latest)
 RUN pip3 install yt-dlp --break-system-packages
+RUN pip3 install playwright --break-system-packages
+
 
 RUN pip3 install requests --break-system-packages
 
