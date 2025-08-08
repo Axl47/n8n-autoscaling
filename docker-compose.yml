@@ -75,6 +75,8 @@ services:
       - n8n_main:/n8n
       - /home/axor/.netrc:/root/.netrc:ro
       - /home/axor/.private:/root/.private:ro
+      - puppeteer_profile:/data/puppeteer-profile
+      - ./local-custom-nodes:/opt/n8n-custom-nodes
     depends_on:
       postgres:
         condition: service_healthy
@@ -126,6 +128,8 @@ services:
       - n8n_webhook:/n8n
       - /home/axor/.netrc:/root/.netrc:ro
       - /home/axor/.private:/root/.private:ro
+      - puppeteer_profile:/data/puppeteer-profile
+      - ./local-custom-nodes:/opt/n8n-custom-nodes
     depends_on:
       n8n:
         condition: service_healthy
@@ -174,6 +178,8 @@ services:
     volumes:
       - /home/axor/.netrc:/root/.netrc:ro
       - /home/axor/.private:/root/.private:ro
+      - puppeteer_profile:/data/puppeteer-profile
+      - ./local-custom-nodes:/opt/n8n-custom-nodes
     depends_on:
       n8n:
         condition: service_healthy
@@ -243,6 +249,8 @@ services:
       - ./.env:/app/.env
       - /home/axor/.netrc:/root/.netrc:ro
       - /home/axor/.private:/root/.private:ro
+      - puppeteer_profile:/data/puppeteer-profile
+      - ./local-custom-nodes:/opt/n8n-custom-nodes
     depends_on:
       redis:
         condition: service_healthy
