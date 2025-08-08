@@ -40,7 +40,7 @@ ENV N8N_CUSTOM_EXTENSIONS="/data/community-nodes"
 # Install yt-dlp (latest)
 RUN pip3 install yt-dlp --break-system-packages
 RUN pip3 install playwright --break-system-packages
-
+Run playwright install
 
 RUN pip3 install requests --break-system-packages
 
